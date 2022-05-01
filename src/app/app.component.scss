@@ -60,7 +60,7 @@
     background: -webkit-linear-gradient(149deg, rgba(252,166,91,1) 0%, rgba(255,218,185,0.9976365546218487) 36%, rgba(255,218,185,1) 68%, rgba(0,254,136,1) 100%);
     background: linear-gradient(149deg, rgba(252,166,91,1) 0%, rgba(255,218,185,0.9976365546218487) 36%, rgba(255,218,185,1) 68%, rgba(0,254,136,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fca65b",endColorstr="#00fe88",GradientType=1);
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     z-index: -1;
