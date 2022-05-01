@@ -2,4 +2,21 @@
     border: 0;
     border-radius: 10px;
     box-shadow: 0 0 8px #000;
+    width: 100vw;
+    height: 100vh;
+    max-width: 600px;
+    max-height: 450px;
+}
+
+.eli-link {
+    text-decoration: none;
+}
+
+.eli-title-1 {
+    font-size: 25px;
+    font-family: sans-serif;
+}
+
+.eli-t-center {
+    text-align: center;
 }

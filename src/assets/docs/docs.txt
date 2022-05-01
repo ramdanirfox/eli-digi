@@ -1,0 +1,8 @@
+Devttestt:
+  - Directive ngFor ngIf
+  - Directive with async data
+  - Promises
+  - Observables
+  - Localstorage / IndexedDB
+
+  
