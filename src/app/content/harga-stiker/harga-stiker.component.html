@@ -1,0 +1,59 @@
+<div class="hitung-container">
+    <div>
+        <h2 class="eli-h2">
+            Perhitungan Harga Print Stiker A3+
+        </h2>
+    </div>
+
+
+    <div class="eli-spacer">
+    </div>
+
+
+    <div class="eli-fx-h eli-form">
+        <label class="eli-fx-g-1 eli-click" for="stiker_cutting">Cutting</label>
+        <input type="checkbox" id="stiker_cutting" [(ngModel)]="cuttingTerpilih" (ngModelChange)="cuttingTerpilih = $event; changePrice()">
+    </div>
+
+    <div class="eli-fx-h eli-form">
+        <div style="padding-right: 30px;" class="eli-fx-g-1">Bahan Stiker</div>
+        <select style="width: 174px;" class="eli-select eli-t-right" [(ngModel)]="bahanTerpilih" (ngModelChange)="bahanTerpilih = $event; changePrice()">
+            <option selected disabled value="">Pilih Bahan :</option>
+            <option *ngFor="let opt of daftarBahan" [value]="opt">{{opt}}</option>
+        </select>
+    </div>
+
+    <div class="eli-fx-h eli-form">
+        <div class="eli-fx-g-1">Lembar</div>
+        <input class="w-input" type="number" placeholder="Lembar" min="1" [(ngModel)]="qty" (ngModelChange)="qty = $event; changePrice()">
+    </div>
+
+    <div class="minitext">*Tidak termasuk desain</div>
+
+    <div *ngIf="calcMode == 1" class="eli-fx-h">
+        <div class="eli-fx-g-1">
+            Harga satuan : 
+        </div>
+        <div class="eli-mono">
+            Rp. {{unitPrice | currency:'IDR':''}}
+        </div>
+    </div>
+    <div *ngIf="calcMode == 2">
+        <div *ngFor="let base of calcBases;" class="eli-fx-h">
+            <div class="eli-fx-g-1">
+                Harga satuan {{base.minQty}} - {{base.maxQty}} :
+            </div>
+            <div class="eli-mono">
+                Rp. {{base.price | currency:'IDR':''}}
+            </div>
+        </div>
+    </div>
+    <div class="eli-fx-h">
+        <div class="eli-fx-g-1">
+            Harga total :
+        </div>
+        <div class="eli-mono">
+            Rp. {{totalPrice | currency:'IDR':''}}
+        </div>
+    </div>
+</div>

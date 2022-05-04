@@ -1,0 +1,16 @@
+<!-- <select [(ngModel)]="serviceSelected">
+    <option *ngFor="let svcName of serviceOptions" [value]="svcName">{{svcName}}</option>
+</select> -->
+
+<div class="eli-t-center list-content">
+    <h2>MELAYANI</h2>
+    <ul class="ul-style">
+    <li *ngFor="let svcName of serviceOptions">
+        <a [routerLink]="[routerMap[svcName] ? routerMap[svcName] : '']">
+            <button class="social-btn">
+                {{svcName}}
+            </button>
+        </a>
+    </li>
+    </ul>
+</div>
