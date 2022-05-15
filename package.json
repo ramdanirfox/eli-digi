@@ -5,12 +5,15 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "prod": "ng build --configuration=production --service-worker",
     "watch": "ng build --watch --configuration development",
+    "sebar": "ng serve --host 0.0.0.0 --disable-host-check --port 1546",
     "test": "ng test",
     "dev:ssr": "ng run eli-digi:serve-ssr",
     "serve:ssr": "node dist/eli-digi/server/main.js",
     "build:ssr": "ng build && ng run eli-digi:server",
-    "prerender": "ng run eli-digi:prerender"
+    "prerender": "ng run eli-digi:prerender",
+    "bangun": "npm run prod && node scripts/copy-sw.js 1 && npm run prerender && node scripts/copy-sw.js 2"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +26,7 @@
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/platform-server": "~13.3.0",
     "@angular/router": "~13.3.0",
+    "@angular/service-worker": "^13.3.8",
     "@nguniversal/express-engine": "^13.1.0",
     "express": "^4.15.2",
     "rxjs": "~7.5.0",

@@ -6,3 +6,12 @@ Devttestt:
   - Localstorage / IndexedDB
 
   
+  formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'IDR',
+    minimumFractionDigits: 0
+  });
+
+  return this.formatter.format(value).replace(/IDR/g, '').replace(/,/g, '.');
+
+  
