@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'layanan',
     loadChildren: () => import('./content/content.module').then(x => x.ContentModule)
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(x => x.AdminModule)
   }
 ];
 

@@ -11,61 +11,27 @@
 
 <section class="carousel" aria-label="Gallery">
   <ol class="carousel__viewport">
-    <li id="carousel__slide1"
+    <li [id]="'carousel__slide' + (i+1)" *ngFor="let slide of contents; let i = index;"
         tabindex="0"
         class="carousel__slide">
+        <!-- <img [src]="'assets/images/EDPDesc.png'"> -->
+        <div class="slide-container">
+          <img class="img-limiter" [src]="slide.url">
+        </div>
       <div class="carousel__snapper">
-        <a href="galeri#carousel__slide4"
+        <a [href]="linkPrefix + '#carousel__slide' + (i ? i : (contents.length))"
            class="carousel__prev">Go to last slide</a>
         <a href="galeri#carousel__slide2"
+           [href]="linkPrefix + '#carousel__slide' + ((i+1) == contents.length ? 1 : (i+2))"
            class="carousel__next">Go to next slide</a>
       </div>
-    </li>
-    <li id="carousel__slide2"
-        tabindex="0"
-        class="carousel__slide">
-      <div class="carousel__snapper"></div>
-      <a href="#carousel__slide1"
-         class="carousel__prev">Go to previous slide</a>
-      <a href="#carousel__slide3"
-         class="carousel__next">Go to next slide</a>
-    </li>
-    <li id="carousel__slide3"
-        tabindex="0"
-        class="carousel__slide">
-      <div class="carousel__snapper"></div>
-      <a href="#carousel__slide2"
-         class="carousel__prev">Go to previous slide</a>
-      <a href="#carousel__slide4"
-         class="carousel__next">Go to next slide</a>
-    </li>
-    <li id="carousel__slide4"
-        tabindex="0"
-        class="carousel__slide">
-      <div class="carousel__snapper"></div>
-      <a href="#carousel__slide3"
-         class="carousel__prev">Go to previous slide</a>
-      <a href="#carousel__slide1"
-         class="carousel__next">Go to first slide</a>
     </li>
   </ol>
   <aside class="carousel__navigation">
     <ol class="carousel__navigation-list">
-      <li class="carousel__navigation-item">
-        <a href="galeri#carousel__slide1"
-           class="carousel__navigation-button">Go to slide 1</a>
-      </li>
-      <li class="carousel__navigation-item">
-        <a href="galeri#carousel__slide2"
-           class="carousel__navigation-button">Go to slide 2</a>
-      </li>
-      <li class="carousel__navigation-item">
-        <a href="galeri#carousel__slide3"
-           class="carousel__navigation-button">Go to slide 3</a>
-      </li>
-      <li class="carousel__navigation-item">
-        <a href="galeri#carousel__slide4"
-           class="carousel__navigation-button">Go to slide 4</a>
+      <li class="carousel__navigation-item" *ngFor="let slide of contents; let i = index;">
+        <a [href]=" linkPrefix + '#carousel__slide' + (i+1)"
+           class="carousel__navigation-button">Go to slide {{i}}</a>
       </li>
     </ol>
   </aside>

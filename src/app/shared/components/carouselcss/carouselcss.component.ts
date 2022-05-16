@@ -4,22 +4,26 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
   selector: 'eli-carouselcss',
   templateUrl: './carouselcss.component.html',
   styleUrls: ['./carouselcss.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  // encapsulation: ViewEncapsulation.None
 })
 export class CarouselcssComponent implements OnInit {
   @Input() linkPrefix = 'galeri';
   @Input() contents = [
     {
-      kind: 'image'
+      kind: 'image',
+      url: 'assets/images/slides/home/home.jpg'
     },
     {
-      kind: 'template'
+      kind: 'template',
+      url: 'assets/images/slides/home/16.jpg'
     },
     {
-      kind: 'image'
+      kind: 'image',
+      url: 'assets/images/slides/home/test.jpg'
     },
     {
-      kind: 'image'
+      kind: 'image',
+      url: 'assets/images/slides/home/photo.jpg'
     }
   ];
 

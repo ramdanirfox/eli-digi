@@ -77,3 +77,10 @@
     margin: 0;
     padding-left: 12px;
 }
+
+.custom-carousel {
+    display: inline-block;
+    width: calc(100vw - 18px);
+    max-width: 900px;
+    aspect-ratio: 16/9.3;
+}
