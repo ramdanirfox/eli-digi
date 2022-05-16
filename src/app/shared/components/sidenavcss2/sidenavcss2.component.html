@@ -17,7 +17,7 @@
         <ul *ngIf="naviItems.length">
             <li *ngFor="let navi of naviItems">
                 <label for="navBtn" class="nav-label" [routerLink]="navi.routerLink">
-                    <a><i class="fa fa-heart"></i>{{navi.name}}</a>
+                    <a [href]="'/' + navi.routerLink[0]"><i class="fa fa-heart"></i>{{navi.name}}</a>
                 </label>
             </li>
             <!-- <li>
