@@ -1,0 +1,40 @@
+<input type="checkbox" class="navBtn" id="navBtn" />
+<div class="container bar">
+    <label class="floatLeft" for="navBtn"><span></span></label>
+    <div class="floatLeft">
+        <ng-content select="[toolbarLeft]"></ng-content>
+    </div>
+    <span class="floatRight paddingRight2rem">
+        <ng-content select="[toolbar]"></ng-content>
+        <!-- Sidebar Navigation made without JavaScript - only CSS! 
+        <b><a href="http://ninety-niners.com">Ninety-Niners.com</a></b> -->
+    </span>
+</div>
+<div class="container">
+    <label class="absolution-overlay" for="navBtn">
+    </label>
+    <nav class="absolution">
+        <ul *ngIf="naviItems.length">
+            <li *ngFor="let navi of naviItems">
+                <label for="navBtn" class="nav-label" [routerLink]="navi.routerLink">
+                    <a><i class="fa fa-heart"></i>{{navi.name}}</a>
+                </label>
+            </li>
+            <!-- <li>
+                <a><i class="fa fa-medkit"></i>Layanan</a>
+            </li>
+            <li>
+                <a><i class="fa fa-heartbeat"></i>Galeri</a>
+            </li>
+            <li>
+                <a><i class="fa fa-ambulance"></i>Kontak</a>
+            </li> -->
+        </ul>
+        <ng-content select="[items]">
+
+        </ng-content>
+    </nav>
+</div>
+<div class="content">
+    <ng-content select="[content]"></ng-content>
+</div>

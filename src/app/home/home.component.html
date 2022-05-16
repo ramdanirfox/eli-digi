@@ -1,0 +1,29 @@
+<section class="eli-t-center">
+    <div class="eli-title-1">
+        Cepat, Dekat, Terjangkau!
+    </div>
+  
+  <!--div class="big-mg-bot">
+    Status:
+    Libur, beroperasi kembali pada pertengahan Mei 2022
+  </div -->
+
+  <div>
+    <iframe class="eli-iframe-card big-mg-bot"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.8074633790707!2d106.99523031537147!3d-6.418779964560547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69951dcfea9d03%3A0xee5ce2f818b59551!2sEli%20Digital%20Printing%20-%20Percetakan%20EDP!5e0!3m2!1sid!2sid!4v1651398448242!5m2!1sid!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <div class="eli-title-1">Contact us</div>
+  <div *ngFor="let social of socials" class="d-inline-blk">
+    <a target="_blank"
+        class="eli-link"
+        [title]="'Kunjungi ' + social.title + ' EDP'"
+        [href]="social.href"
+    >
+      <button class="social-btn pad-btn">
+        <img class="max-img-2 pad-img anim-img" [src]="'assets/icons/socials/' + social.iconsrc">
+        {{social.account}}
+      </button>
+    </a>
+  </div>
+</section>

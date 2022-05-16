@@ -1,3 +1,5 @@
+
+
 <div class="image-bg">
 </div>
 
@@ -6,39 +8,43 @@
   <img class="max-img-2" src="assets/images/EDPDescXS.png">
 </div>
 
+<!-- <eli-sidenavcss class="abs-pos"></eli-sidenavcss> -->
+<eli-sidenavcss2 class="head-toolbar" [naviItems]="navItems">
+  <h1 toolbarLeft class="title-style">
+    <!-- <img class="max-img-1" src="assets/images/EDPMiniXS.png"> -->
+    Eli Digital Printing
+  </h1>
 
-<div class="eli-t-center">
-  <div class="eli-title-1">
-    Cepat, Dekat, Terjangkau!
+  <div toolbar style="margin-top: 4px;">
+    <img class="max-img-1" src="assets/images/EDPMiniXS.png">
+    <img class="max-img-2" src="assets/images/EDPDescXS.png">
   </div>
-  
-  <!--div class="big-mg-bot">
-    Status:
-    Libur, beroperasi kembali pada pertengahan Mei 2022
-  </div -->
 
-  <div>
-    <div class="page-adjust">
-      <router-outlet></router-outlet>
+  <nav items>
+    <!-- <ul>
+      <li [routerLink]="['beranda']">
+          <a><i class="fa fa-heart"></i>Beranda</a>
+      </li>
+      <li [routerLink]="['layanan']">
+          <a><i class="fa fa-medkit"></i>Layanan</a>
+      </li>
+      <li [routerLink]="['galeri']">
+          <a><i class="fa fa-heartbeat"></i>Galeri</a>
+      </li>
+      <li [routerLink]="['beranda']">
+          <a href="#"><i class="fa fa-ambulance"></i>Kontak</a>
+      </li>
+  </ul> -->
+</nav>
+
+  <div content class="eli-t-center">
+
+    <div>
+      <div class="page-adjust">
+        <router-outlet></router-outlet>
+      </div>
     </div>
-  </div>
 
-  <div>
-    <iframe class="eli-iframe-card big-mg-bot"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.8074633790707!2d106.99523031537147!3d-6.418779964560547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69951dcfea9d03%3A0xee5ce2f818b59551!2sEli%20Digital%20Printing%20-%20Percetakan%20EDP!5e0!3m2!1sid!2sid!4v1651398448242!5m2!1sid!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
   </div>
-
-  <div class="eli-title-1">Contact us</div>
-  <div *ngFor="let social of socials" class="d-inline-blk">
-    <a target="_blank"
-        class="eli-link"
-        [title]="'Kunjungi ' + social.title + ' EDP'"
-        [href]="social.href"
-    >
-      <button class="social-btn pad-btn">
-        <img class="max-img-2 pad-img anim-img" [src]="'assets/icons/socials/' + social.iconsrc">
-        {{social.account}}
-      </button>
-    </a>
-  </div>
-</div>
+</eli-sidenavcss2>

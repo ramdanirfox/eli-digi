@@ -14,4 +14,4 @@ Devttestt:
 
   return this.formatter.format(value).replace(/IDR/g, '').replace(/,/g, '.');
 
-  
+  https://developers.google.com/my-business/content/basic-setup
