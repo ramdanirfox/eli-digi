@@ -16,13 +16,15 @@
         class="carousel__slide">
         <!-- <img [src]="'assets/images/EDPDesc.png'"> -->
         <div class="slide-container">
-          <img class="img-limiter" [src]="slide.url">
+          <a [href]="slide.link" target="_blank" class="with-link" *ngIf="slide.link">
+            <img class="img-limiter" [src]="slide.url">
+          </a>
+          <img class="img-limiter" [src]="slide.url" *ngIf="!slide.link">
         </div>
       <div class="carousel__snapper">
-        <a [href]="linkPrefix + '#carousel__slide' + (i ? i : (contents.length))"
+        <a [href]="linkPrefix + pfx + '#carousel__slide' + (i ? i : (contents.length))"
            class="carousel__prev">Go to last slide</a>
-        <a href="galeri#carousel__slide2"
-           [href]="linkPrefix + '#carousel__slide' + ((i+1) == contents.length ? 1 : (i+2))"
+        <a [href]="linkPrefix + pfx + '#carousel__slide' + ((i+1) == contents.length ? 1 : (i+2))"
            class="carousel__next">Go to next slide</a>
       </div>
     </li>
@@ -30,7 +32,7 @@
   <aside class="carousel__navigation">
     <ol class="carousel__navigation-list">
       <li class="carousel__navigation-item" *ngFor="let slide of contents; let i = index;">
-        <a [href]=" linkPrefix + '#carousel__slide' + (i+1)"
+        <a [href]=" linkPrefix + pfx + '#carousel__slide' + (i+1)"
            class="carousel__navigation-button">Go to slide {{i}}</a>
       </li>
     </ol>
