@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'eli-carouselcss',
@@ -23,22 +24,34 @@ export class CarouselcssComponent implements OnInit {
       kind: 'template',
       url: 'assets/images/slides/home/16.jpg'
     },
-    {
-      kind: 'image',
-      url: 'assets/images/slides/home/test.jpg'
-    },
-    {
-      kind: 'image',
-      url: 'assets/images/slides/home/photo.jpg'
-    }
+    // {
+    //   kind: 'image',
+    //   url: 'assets/images/slides/home/test.jpg'
+    // },
+    // {
+    //   kind: 'image',
+    //   url: 'assets/images/slides/home/photo.jpg'
+    // }
   ];
   // pfx = environment.hashLinkPrefix;
   pfx = '';
 
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.dataService.readMessage().subscribe(x => {
+      let splData = x.split('\n\n');
+      for (let i = 1; i < splData.length; i++) {
+        this.dataService.resolveFileToUrl(splData[i]).subscribe(y => {
+          console.log('Img resolved!', i);
+          this.contents.push({
+            kind: 'image',
+            url: y
+          })
+        });
+      }
+    });
   }
 
 }
