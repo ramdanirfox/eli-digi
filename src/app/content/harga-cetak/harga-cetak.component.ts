@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./harga-cetak.component.scss']
 })
 export class HargaCetakComponent implements OnInit {
-
+  imgSrc = 'cetaka3.jpg';
   bahanTerpilih = '';
   // cuttingTerpilih = true;
   qty = 1;

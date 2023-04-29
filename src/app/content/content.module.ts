@@ -6,13 +6,15 @@ import { ContentComponent } from './content.component';
 import { SharedModule } from '../shared/shared.module';
 import { HargaStikerComponent } from './harga-stiker/harga-stiker.component';
 import { HargaCetakComponent } from './harga-cetak/harga-cetak.component';
+import { HargaGambarComponent } from './harga-gambar/harga-gambar.component';
 
 
 @NgModule({
   declarations: [
     ContentComponent,
     HargaStikerComponent,
-    HargaCetakComponent
+    HargaCetakComponent,
+    HargaGambarComponent
   ],
   imports: [
     CommonModule,

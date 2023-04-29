@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HargaStikerComponent implements OnInit {
   // cutt
+  imgSrc = 'stiker.jpg';
   bahanTerpilih = '';
   cuttingTerpilih = true;
   qty = 1;

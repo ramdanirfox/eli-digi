@@ -6,7 +6,13 @@
     <h2>MELAYANI</h2>
     <ul class="ul-style">
     <li *ngFor="let svcName of serviceOptions">
-        <a [routerLink]="[routerMap[svcName] ? routerMap[svcName] : '']">
+        <a [routerLink]="[routerMap[svcName] ? routerMap[svcName] : '']" *ngIf="routerMap[svcName]">
+            <button class="social-btn">
+                {{svcName}}
+            </button>
+        </a>
+
+        <a [routerLink]="['info/' + servicePic[svcName]]" *ngIf="!routerMap[svcName]">
             <button class="social-btn">
                 {{svcName}}
             </button>
